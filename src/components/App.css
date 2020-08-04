@@ -1,0 +1,22 @@
+#header {
+  background-color: #1d80be;
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  line-height: 2.5;
+  border-top: 4px solid #1d5c8f;
+  border-bottom: 2px solid #d7d5d4;
+}
+.header-button {
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 12px !important;
+}
+.all-header-button {
+  float: right;
+  line-height: 2.5;
+}
+.divider {
+  border-left: 1px solid lightgray !important;
+}
