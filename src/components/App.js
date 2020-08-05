@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Button, Table, Layout, Divider, Checkbox } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Button, Table, Layout, Divider } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
 import githubJobs from '../api/githubJobs';
 import SearchBox from './SearchBox';
+import MainResult from './MainResult';
 import './App.css';
 
 const { Column } = Table;
@@ -12,13 +13,18 @@ const App = () => {
   const [desc, setDesc] = useState('');
   const [loc, setLoc] = useState('');
   const [jobs, setJobs] = useState([]);
+  const [fullTime, setFullTime] = useState(false);
 
-  const onSearch = async (phrase) => {
+  const onSearch = async () => {
     const result = await githubJobs.get(
-      `/positions.json?search=${desc}&location=${loc}`
+      `/positions.json?search=${desc}&location=${loc}&full_time=${fullTime}`
     );
     setJobs(result.data);
   };
+
+  useEffect(() => {
+    onSearch();
+  }, []);
 
   return (
     <Layout>
@@ -38,25 +44,19 @@ const App = () => {
           </Button>
         </div>
       </Header>
-      <div className="search-div">
+      <div>
         <SearchBox
+          className="search-div"
+          setFullTime={setFullTime}
           onSearch={onSearch}
           desc={desc}
           setDesc={setDesc}
           loc={loc}
           setLoc={setLoc}
         />
-        <div className="checkbox">
-          <Checkbox /> Full Time Only
-        </div>
-        <Button type="primary" onClick={onSearch} className="search-button">
-          Button
-        </Button>
       </div>
       <Content>
-        <Table dataSource={jobs}>
-          <Column title="Company" dataIndex="company" key="company"></Column>
-        </Table>
+        <MainResult jobs={jobs} />
       </Content>
       <Footer>
         <div>
