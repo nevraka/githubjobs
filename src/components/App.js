@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Table, Layout, Divider } from 'antd';
+import { Button, Table, Layout, Divider, Checkbox } from 'antd';
+import { GithubOutlined } from '@ant-design/icons';
 import githubJobs from '../api/githubJobs';
 import SearchBox from './SearchBox';
 import './App.css';
@@ -37,23 +38,49 @@ const App = () => {
           </Button>
         </div>
       </Header>
-      <SearchBox
-        onSearch={onSearch}
-        desc={desc}
-        setDesc={setDesc}
-        loc={loc}
-        setLoc={setLoc}
-      />
+      <div className="search-div">
+        <SearchBox
+          onSearch={onSearch}
+          desc={desc}
+          setDesc={setDesc}
+          loc={loc}
+          setLoc={setLoc}
+        />
+        <div className="checkbox">
+          <Checkbox /> Full Time Only
+        </div>
+        <Button type="primary" onClick={onSearch} className="search-button">
+          Button
+        </Button>
+      </div>
       <Content>
         <Table dataSource={jobs}>
           <Column title="Company" dataIndex="company" key="company"></Column>
         </Table>
-        Hello
-        <Button type="primary" onClick={onSearch}>
-          Button
-        </Button>
       </Content>
-      <Footer>Footer</Footer>
+      <Footer>
+        <div>
+          <Button type="link" className="footer-button">
+            The GitHub Blog
+          </Button>
+          <Button type="link" className="footer-button">
+            Contact
+          </Button>
+          <Button type="link" className="footer-button">
+            Privacy
+          </Button>
+          <Button type="link" className="footer-button">
+            Terms
+          </Button>
+          <Button type="link" className="footer-button">
+            API
+          </Button>
+          <GithubOutlined className="github" />
+          <span className="reserved">
+            © 2020 GitHub Inc. All rights reserved.
+          </span>
+        </div>
+      </Footer>
     </Layout>
   );
 };
