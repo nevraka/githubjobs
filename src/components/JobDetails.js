@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'antd';
-import { Button, Card } from 'antd';
+import { Card } from 'antd';
 import { Divider } from 'antd';
 import { useParams } from 'react-router-dom';
 import { ArrowLeftOutlined } from '@ant-design/icons';

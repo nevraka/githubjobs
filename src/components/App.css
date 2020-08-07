@@ -95,11 +95,13 @@
 }
 .company-type {
   display: flex;
+  font-weight: normal;
 }
 .company-title {
   margin-left: 20px;
   font-weight: 400;
   padding-left: 80px !important;
+  font-weight: bold;
 }
 .job-description {
   padding-left: 80px !important;
