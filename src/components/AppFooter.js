@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Layout, Divider } from 'antd';
+import { Button, Layout } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
 import './App.css';
 

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Layout } from 'antd';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import githubJobs from '../api/githubJobs';
 import SearchBox from './SearchBox';
 import MainResult from './MainResult';
 import JobDetails from './JobDetails';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
+import HowItWorks from './HowItWorks';
 import './App.css';
 
 const { Content } = Layout;
@@ -27,8 +28,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <Layout>
-        <AppHeader />
+        <AppHeader onSearch={onSearch} />
         <Switch>
+          <Route path="/faq">
+            <HowItWorks />
+          </Route>
           <Route path="/position/:id">
             <JobDetails />
           </Route>
