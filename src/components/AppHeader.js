@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Layout, Divider } from 'antd';
 import './App.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const { Header } = Layout;
 
@@ -10,9 +10,9 @@ const AppHeader = ({ onSearch }) => {
 
   return (
     <Header id="header">
-      <Button type="link" className="header-brand" onClick={onSearch}>
+      <Link to="/" className="header-brand">
         GitHub Jobs
-      </Button>
+      </Link>
       <div className="all-header-button">
         <Button type="link" className="header-button" onClick={onSearch}>
           All jobs
