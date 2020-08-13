@@ -46,7 +46,11 @@ const JobDetails = () => {
             <Card className="side-logo" style={{ fontWeight: 'bold' }}>
               <p>{job.company}</p>
               <Divider />
-              <img src={job.company_logo} style={{ height: 260, width: 260 }} />
+              <img
+                src={job.company_logo}
+                style={{ height: 260, width: 260 }}
+                alt=""
+              />
             </Card>
           </Col>
         </Row>

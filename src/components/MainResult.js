@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { List, Divider } from 'antd';
 import { Link } from 'react-router-dom';
-import JobDetails from './JobDetails';
 import './App.css';
 import moment from 'moment';
 
 const MainResult = ({ jobs }) => {
-  const [showJobs, setShowJobs] = useState(false);
-
   return (
     <div className="all-results">
       All Jobs
