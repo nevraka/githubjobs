@@ -168,3 +168,27 @@
   min-height: 310px;
   width: 928px;
 }
+.all-support-page {
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 40px;
+  background-color: white;
+  text-size-adjust: 100%;
+}
+.git-support {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.quick-response {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-size: 14px;
+  color: #24292e;
+  width: 600px;
+}
