@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout } from 'antd';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import githubJobs from '../api/githubJobs';
@@ -8,6 +8,7 @@ import JobDetails from './JobDetails';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import HowItWorks from './HowItWorks';
+import SupportPage from './SupportPage';
 import './App.css';
 
 const { Content } = Layout;
@@ -17,6 +18,14 @@ const App = () => {
   const [loc, setLoc] = useState('');
   const [jobs, setJobs] = useState([]);
   const [fullTime, setFullTime] = useState(false);
+
+  useEffect(() => {
+    const loadFeatured = async () => {
+      const result = await githubJobs.get(`/positions.json?search=github`);
+      setJobs(result.data.slice(0, 3));
+    };
+    loadFeatured();
+  }, []);
 
   const onSearch = async () => {
     const result = await githubJobs.get(
@@ -30,6 +39,9 @@ const App = () => {
       <Layout>
         <AppHeader onSearch={onSearch} />
         <Switch>
+          <Route path="/github_support">
+            <SupportPage />
+          </Route>
           <Route path="/faq">
             <HowItWorks />
           </Route>
