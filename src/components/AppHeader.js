@@ -1,15 +1,20 @@
 import React from 'react';
 import { Button, Layout, Divider } from 'antd';
 import './App.css';
+import { useHistory } from 'react-router-dom';
 
 const { Header } = Layout;
 
-const AppHeader = () => {
+const AppHeader = ({ onSearch }) => {
+  const history = useHistory();
+
   return (
     <Header id="header">
-      GitHub Jobs
+      <Button type="link" className="header-brand" onClick={onSearch}>
+        GitHub Jobs
+      </Button>
       <div className="all-header-button">
-        <Button type="link" className="header-button">
+        <Button type="link" className="header-button" onClick={onSearch}>
           All jobs
         </Button>
         <Divider type="vertical" className="divider" />
@@ -17,7 +22,13 @@ const AppHeader = () => {
           Post a job
         </Button>
         <Divider type="vertical" className="divider" />
-        <Button type="link" className="header-button">
+        <Button
+          type="link"
+          className="header-button"
+          onClick={() => {
+            history.push('/faq');
+          }}
+        >
           How it works
         </Button>
       </div>
