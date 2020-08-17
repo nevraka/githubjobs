@@ -20,9 +20,9 @@ const AppHeader = ({ onSearch }) => {
           </Link>
         </Col>
         <Col className="all-header-button">
-          <Button type="link" className="header-button" onClick={onSearch}>
+          <Link to="/" className="header-button">
             All jobs
-          </Button>
+          </Link>
           <Divider type="vertical" className="divider" />
           <Button type="link" className="header-button">
             Post a job
