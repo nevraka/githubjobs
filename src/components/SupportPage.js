@@ -79,29 +79,14 @@ const SupportPage = () => {
         wrapperCol={{
           span: 16,
         }}
+        initialValues={{ remember: true }}
       >
         <div className="input">
-          <Form.Item
-            name="basic"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your username!',
-              },
-            ]}
-          >
+          <Form.Item name="basic">
             From
             <Input />
           </Form.Item>
-          <Form.Item
-            name="basic"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your account or organization!',
-              },
-            ]}
-          >
+          <Form.Item name="basic">
             Account or organization
             <Input />
           </Form.Item>

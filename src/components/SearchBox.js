@@ -48,6 +48,7 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
       </Col>
       <Col xs={16} sm={12} md={3} className="checkbox">
         <Checkbox
+          style={{ fontSize: '11px' }}
           onChange={(event) => {
             setFullTime(event.target.checked);
           }}
