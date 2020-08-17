@@ -47,9 +47,6 @@
   font-size: 12px;
   color: #444;
   font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  padding-left: 40px;
 }
 .checkbox {
   align-self: center;
@@ -71,7 +68,6 @@
   color: #999;
 }
 .all-results {
-  margin-top: -9px;
   margin-left: 20px;
   margin-right: 20px;
   min-height: 310px;

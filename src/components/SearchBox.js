@@ -25,9 +25,9 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
   };
 
   return (
-    <Row style={{ width: '100%' }}>
-      <Col span={8} className="searchbox-div">
-        Job Description
+    <Row gutter={[24, 12]} style={{ padding: '16px 20px' }}>
+      <Col xs={24} sm={12} md={8} className="searchbox-div">
+        <span>Job Description</span>
         <Input
           className="search-input"
           value={desc}
@@ -36,8 +36,8 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
           placeholder="Filter by title, benefits, companies, expertise"
         />
       </Col>
-      <Col span={8} className="searchbox-div">
-        Location
+      <Col xs={24} sm={12} md={8} className="searchbox-div">
+        <span>Location</span>
         <Input
           className="search-input"
           value={loc}
@@ -46,15 +46,16 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
           placeholder="Filter by city, state, zip code, or country"
         />
       </Col>
-      <Col span={3} className="checkbox">
+      <Col xs={16} sm={12} md={3} className="checkbox">
         <Checkbox
           onChange={(event) => {
             setFullTime(event.target.checked);
           }}
-        />
-        Full Time Only
+        >
+          Full Time Only
+        </Checkbox>
       </Col>
-      <Col span={5} className="search-button">
+      <Col xs={8} sm={12} md={5} className="search-button">
         <Button type="primary" onClick={onSearch}>
           Search
         </Button>

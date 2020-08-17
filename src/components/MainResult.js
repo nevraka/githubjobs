@@ -7,7 +7,7 @@ import moment from 'moment';
 const MainResult = ({ jobs }) => {
   return (
     <div className="all-results">
-      All Jobs
+      <span>All Jobs</span>
       <Divider />
       <div>
         <List

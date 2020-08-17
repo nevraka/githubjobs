@@ -49,19 +49,17 @@ const App = () => {
             <JobDetails />
           </Route>
           <Route path="/">
-            <div>
-              <SearchBox
-                className="search-div"
-                setFullTime={setFullTime}
-                onSearch={onSearch}
-                desc={desc}
-                setDesc={setDesc}
-                loc={loc}
-                setLoc={setLoc}
-                jobs={jobs}
-                setJobs={setJobs}
-              />
-            </div>
+            <SearchBox
+              className="search-div"
+              setFullTime={setFullTime}
+              onSearch={onSearch}
+              desc={desc}
+              setDesc={setDesc}
+              loc={loc}
+              setLoc={setLoc}
+              jobs={jobs}
+              setJobs={setJobs}
+            />
             <Content>
               <MainResult jobs={jobs} />
             </Content>
