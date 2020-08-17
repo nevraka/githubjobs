@@ -5,6 +5,7 @@ import { Card } from 'antd';
 import { Divider } from 'antd';
 import { useParams } from 'react-router-dom';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import ReactMarkdown from 'react-markdown';
 import githubJobs from '../api/githubJobs';
 
 const JobDetails = () => {
@@ -34,14 +35,16 @@ const JobDetails = () => {
         <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
           <Col span={16} className="job-description gutter-row">
             <div>
-              <div dangerouslySetInnerHTML={{ __html: job.description }} />
+              <ReactMarkdown source={job.description} escapeHtml={false} />
             </div>
           </Col>
           <Col className="gutter-row" span={8}>
             <Card className="side" style={{ fontWeight: 'bold' }}>
               <p>How to Apply</p>
               <Divider />
-              <div dangerouslySetInnerHTML={{ __html: job.how_to_apply }} />
+              <div style={{ wordBreak: 'break-all', fontSize: '11px' }}>
+                <ReactMarkdown source={job.how_to_apply} escapeHtml={false} />
+              </div>
             </Card>
             <Card className="side-logo" style={{ fontWeight: 'bold' }}>
               <p>{job.company}</p>
