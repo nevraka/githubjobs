@@ -70,22 +70,47 @@ const SupportPage = () => {
         Get Help With Github
       </h3>
       <Divider />
-      <Form form={form} />
-      <div className="input">
-        <Form.Item>
-          From
-          <Input />
-        </Form.Item>
-        <Form.Item>
-          Account or organization
-          <Input />
-        </Form.Item>
-        <Form.Item>
-          Subject
-          <Input />
-        </Form.Item>
-      </div>
-      <Form.Item>
+      <Form
+        form={form}
+        name="basic"
+        labelCol={{
+          span: 8,
+        }}
+        wrapperCol={{
+          span: 16,
+        }}
+      >
+        <div className="input">
+          <Form.Item
+            name="basic"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your username!',
+              },
+            ]}
+          >
+            From
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="basic"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your account or organization!',
+              },
+            ]}
+          >
+            Account or organization
+            <Input />
+          </Form.Item>
+          <Form.Item name="basic" type="primary" htmlType="submit">
+            Subject
+            <Input />
+          </Form.Item>
+        </div>
+
         <div className="response">
           <div style={{ fontWeight: '600', marginTop: '16px' }}>
             Looking for help with a common request?
@@ -153,58 +178,63 @@ const SupportPage = () => {
               </Modal>
             </li>
           </ul>
-          <Button type="primary">Submit</Button>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
         </div>
         <div
           style={{
             fontWeight: '600',
             marginTop: '16px',
-            marginBottom: '-20px',
           }}
         >
           How can we help?
         </div>
-      </Form.Item>
-      <div
-        className="container"
-        style={{
-          width: '600px',
-          height: '600px',
-          padding: '5px',
-          boxSizing: 'border-box',
-          fontSize: '14px',
-        }}
-      >
-        <ReactMde
-          value={value}
-          onChange={setValue}
-          selectedTab={selectedTab}
-          onTabChange={setSelectedTab}
-          generateMarkdownPreview={(markdown) =>
-            Promise.resolve(converter.makeHtml(markdown))
-          }
-          loadsuggestions={loadsuggestions}
-          childProps={{
-            writeButton: {
-              tabIndex: -1,
-            },
+        <div
+          className="container"
+          style={{
+            width: '600px',
+            height: '600px',
+            padding: '5px',
+            boxSizing: 'border-box',
+            fontSize: '14px',
           }}
-        />
-        <div style={{ fontWeight: 'bold' }}>
-          Attach files, screenshots, or logs
-        </div>
-        <Upload>
-          <div style={{ paddingTop: '20px' }}>
-            <Button>
-              <UploadOutlined />
-              Choose files
-            </Button>
+        >
+          <ReactMde
+            value={value}
+            onChange={setValue}
+            selectedTab={selectedTab}
+            onTabChange={setSelectedTab}
+            generateMarkdownPreview={(markdown) =>
+              Promise.resolve(converter.makeHtml(markdown))
+            }
+            loadsuggestions={loadsuggestions}
+            childProps={{
+              writeButton: {
+                tabIndex: -1,
+              },
+            }}
+          />
+          <div style={{ fontWeight: 'bold' }}>
+            Attach files, screenshots, or logs
           </div>
-        </Upload>
-        <div style={{ paddingTop: '20px' }}>
-          <Button type="primary">Send Request</Button>
+          <Upload>
+            <div style={{ paddingTop: '20px' }}>
+              <Button>
+                <UploadOutlined />
+                Choose files
+              </Button>
+            </div>
+          </Upload>
+          <div style={{ paddingTop: '20px' }}>
+            <Form.Item>
+              <Button type="primary">Send Request</Button>
+            </Form.Item>
+          </div>
         </div>
-      </div>
+      </Form>
     </div>
   );
 };
