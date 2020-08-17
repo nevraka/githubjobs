@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Layout } from 'antd';
+import { Link } from 'react-router-dom';
 import { GithubOutlined } from '@ant-design/icons';
 import './App.css';
 
@@ -12,9 +13,11 @@ const AppFooter = () => {
         <Button type="link" className="footer-button">
           The GitHub Blog
         </Button>
-        <Button type="link" className="footer-button">
-          Contact
-        </Button>
+        <Link to="/github_support">
+          <Button type="link" className="footer-button">
+            Contact
+          </Button>
+        </Link>
         <Button type="link" className="footer-button">
           Privacy
         </Button>
