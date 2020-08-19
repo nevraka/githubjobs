@@ -102,7 +102,13 @@ const SupportPage = () => {
           </div>
           <ul className="quick-response">
             <li>
-              <a onClick={() => setModal({ ...modal, repository: true })}>
+              <a
+                href="!#"
+                onClick={(e) => {
+                  setModal({ ...modal, repository: true });
+                  e.preventDefault();
+                }}
+              >
                 I have a question about a repository on GitHub
               </a>
               <Modal
@@ -124,7 +130,13 @@ const SupportPage = () => {
               </Modal>
             </li>
             <li>
-              <a onClick={() => setModal({ ...modal, error: true })}>
+              <a
+                href="!#"
+                onClick={(e) => {
+                  setModal({ ...modal, error: true });
+                  e.preventDefault();
+                }}
+              >
                 I'm seeing a GitHub Pages error
               </a>
               <Modal
@@ -147,7 +159,13 @@ const SupportPage = () => {
               </Modal>
             </li>
             <li>
-              <a onClick={() => setModal({ ...modal, declined: true })}>
+              <a
+                href="!#"
+                onClick={(e) => {
+                  setModal({ ...modal, declined: true });
+                  e.preventDefault();
+                }}
+              >
                 My credit card was declined
               </a>
               <Modal

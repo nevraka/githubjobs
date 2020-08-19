@@ -10,8 +10,6 @@ import SupportPage from './SupportPage';
 import CompanySearch from './CompanySearch';
 import './App.css';
 
-const { Content } = Layout;
-
 const App = () => {
   return (
     <BrowserRouter>
