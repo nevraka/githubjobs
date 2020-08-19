@@ -1,3 +1,8 @@
+#root {
+  height: 100vh;
+  background: #f0f2f5;
+}
+
 #header {
   background-color: #1d80be;
   float: left;

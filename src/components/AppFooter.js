@@ -8,7 +8,17 @@ const { Footer } = Layout;
 
 const AppFooter = () => {
   return (
-    <Footer>
+    <Footer
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+        position: 'fixed',
+        bottom: '0',
+        width: '100%',
+        background: '#f5f5f5',
+        borderTop: '1px solid #ddd',
+      }}
+    >
       <div>
         <Button type="link" className="footer-button">
           The GitHub Blog
