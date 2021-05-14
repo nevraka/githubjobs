@@ -42,8 +42,8 @@ const MainPage = () => {
       />
       <Result jobs={jobs} title="All Jobs" />
       <a
-        class="github-fork-ribbon"
-        href="https://github.com/nevraka/address-list"
+        class="github-fork-ribbon right-bottom fixed"
+        href="https://github.com/nevraka/githubjobs"
         data-ribbon="Fork me on GitHub"
         title="Fork me on GitHub"
       >
