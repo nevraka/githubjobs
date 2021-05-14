@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Result from '../src/components/Result';
 import SearchBox from '../src/components/SearchBox';
+import 'github-fork-ribbon-css/gh-fork-ribbon.css';
 import axios from 'axios';
 
 const MainPage = () => {
@@ -40,6 +41,14 @@ const MainPage = () => {
         setJobs={setJobs}
       />
       <Result jobs={jobs} title="All Jobs" />
+      <a
+        class="github-fork-ribbon"
+        href="https://github.com/nevraka/address-list"
+        data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub"
+      >
+        Fork me on GitHub
+      </a>
     </>
   );
 };
