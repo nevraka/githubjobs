@@ -4,10 +4,7 @@ import { GithubOutlined, UploadOutlined } from '@ant-design/icons';
 import { Form, Input, Button, Upload } from 'antd';
 import ReactMde from 'react-mde';
 import * as Showdown from 'showdown';
-
 import 'react-mde/lib/styles/css/react-mde-all.css';
-
-import './App.css';
 
 const SupportPage = () => {
   const [form] = Form.useForm();

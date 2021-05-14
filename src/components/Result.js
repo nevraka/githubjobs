@@ -1,7 +1,6 @@
 import React from 'react';
 import { List, Divider } from 'antd';
-import { Link } from 'react-router-dom';
-import './App.css';
+import Link from 'next/link';
 import moment from 'moment';
 
 const Result = ({ jobs, title }) => {
@@ -10,38 +9,43 @@ const Result = ({ jobs, title }) => {
       <span style={{ marginLeft: '40px' }}>{title}</span>
       <Divider />
       <div>
-        <List
-          className="main-job-results"
-          itemLayout="horizontal"
-          dataSource={jobs}
-          renderItem={(job) => (
-            <List.Item key={job.id}>
-              <List.Item.Meta
-                description={
-                  <div className="description">
-                    <div className="company-title">
-                      <Link to={`/position/${job.id}`}>{job.title}</Link>
-                      <div className="company-type">
-                        <Link
-                          to={`/companies/${job.company}`}
-                          style={{ color: '#999' }}
-                        >
-                          {job.company}
-                        </Link>{' '}
-                        &nbsp;-
-                        <div>{job.type}</div>
+        {jobs && (
+          <List
+            className="main-job-results"
+            itemLayout="horizontal"
+            dataSource={jobs}
+            renderItem={(job) => (
+              <List.Item key={job.id}>
+                <List.Item.Meta
+                  description={
+                    <div className="description">
+                      <div className="company-title">
+                        <Link href={`/position/${job.id}`} passHref>
+                          <a>{job.title}</a>
+                        </Link>
+                        <div className="company-type">
+                          <Link
+                            href={`/companies/${job.company}`}
+                            passHref
+                            style={{ color: '#999' }}
+                          >
+                            <a>{job.company}</a>
+                          </Link>
+                          &nbsp;-
+                          <div>{job.type}</div>
+                        </div>
+                      </div>
+                      <div className="result-right">
+                        <div>{job.location}</div>
+                        <div>{moment(job.created_at).fromNow()}</div>
                       </div>
                     </div>
-                    <div className="result-right">
-                      <div>{job.location}</div>
-                      <div>{moment(job.created_at).fromNow()}</div>
-                    </div>
-                  </div>
-                }
-              />
-            </List.Item>
-          )}
-        />
+                  }
+                />
+              </List.Item>
+            )}
+          />
+        )}
       </div>
     </div>
   );

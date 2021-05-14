@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchBox from './SearchBox';
 import { useParams } from 'react-router-dom';
-import githubJobs from '../api/githubJobs';
+import axios from 'axios';
 import Result from './Result';
 
 const CompanySearch = () => {
@@ -12,7 +12,7 @@ const CompanySearch = () => {
 
   useEffect(() => {
     const loadFeatured = async () => {
-      const result = await githubJobs.get(`/positions.json?search=${company}`);
+      const result = await axios.get(`/api/positions?search=${company}`);
       setJobs(result.data);
     };
     loadFeatured();

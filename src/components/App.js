@@ -1,14 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MainPage from './MainPage';
-import JobDetails from './JobDetails';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
-import HowItWorks from './HowItWorks';
 import SupportPage from './SupportPage';
 import CompanySearch from './CompanySearch';
-import './App.css';
 
 const App = () => {
   return (
@@ -21,15 +17,6 @@ const App = () => {
           </Route>
           <Route path="/github_support">
             <SupportPage />
-          </Route>
-          <Route path="/faq">
-            <HowItWorks />
-          </Route>
-          <Route path="/position/:id">
-            <JobDetails />
-          </Route>
-          <Route path="/">
-            <MainPage />
           </Route>
         </Switch>
         <AppFooter />

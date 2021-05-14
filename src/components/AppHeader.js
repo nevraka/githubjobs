@@ -1,42 +1,35 @@
 import React from 'react';
-import { Button, Layout, Divider, Row, Col } from 'antd';
-import './App.css';
-import { useHistory, Link } from 'react-router-dom';
-
+import { Layout, Divider, Row, Col } from 'antd';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 const { Header } = Layout;
 
 const AppHeader = ({ onSearch }) => {
-  const history = useHistory();
+  const router = useRouter();
 
   return (
     <Header
       id="header"
-      style={{ padding: '0 20px', height: 'auto', minHeight: '64px' }}
+      style={{ padding: '10px 15px 0px', height: 'auto', minHeight: '64px' }}
     >
       <Row justify="space-between">
         <Col>
-          <Link to="/" className="header-brand">
+          <Link href="/" className="header-brand">
             GitHub Jobs
           </Link>
         </Col>
         <Col className="all-header-button">
-          <Link to="/" className="header-button">
+          <Link href="/" className="header-button">
             All jobs
           </Link>
           <Divider type="vertical" className="divider" />
-          <Button type="link" className="header-button">
+          <Link href="/" className="header-button">
             Post a job
-          </Button>
+          </Link>
           <Divider type="vertical" className="divider" />
-          <Button
-            type="link"
-            className="header-button"
-            onClick={() => {
-              history.push('/faq');
-            }}
-          >
+          <Link href="/faq" className="header-button">
             How it works
-          </Button>
+          </Link>
         </Col>
       </Row>
     </Header>

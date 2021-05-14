@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
 import { Button, Checkbox, Row, Col } from 'antd';
-import './App.css';
 
 const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
   const handleDescChange = (event) => {
@@ -27,7 +26,7 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
   return (
     <Row gutter={[24, 12]} style={{ padding: '16px 20px' }}>
       <Col xs={24} sm={12} md={8} className="searchbox-div">
-        <span>Job Description</span>
+        <div style={{ marginLeft: '30px' }}>Job Description</div>
         <Input
           className="search-input"
           value={desc}
@@ -37,7 +36,7 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
         />
       </Col>
       <Col xs={24} sm={12} md={8} className="searchbox-div">
-        <span>Location</span>
+        <div style={{ marginLeft: '30px' }}>Location</div>
         <Input
           className="search-input"
           value={loc}

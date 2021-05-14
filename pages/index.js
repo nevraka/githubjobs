@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Result from './Result';
-import SearchBox from './SearchBox';
-import githubJobs from '../api/githubJobs';
+import Result from '../src/components/Result';
+import SearchBox from '../src/components/SearchBox';
+import axios from 'axios';
 
 const MainPage = () => {
   const [desc, setDesc] = useState('');
@@ -11,16 +11,18 @@ const MainPage = () => {
 
   useEffect(() => {
     const loadFeatured = async () => {
-      const result = await githubJobs.get(`/positions.json?search=github`);
+      const result = await axios.get(`/api/positions?search=github`);
+      console.log(result);
       setJobs(result.data.slice(0, 3));
     };
     loadFeatured();
   }, []);
 
   const onSearch = async () => {
-    const result = await githubJobs.get(
-      `/positions.json?search=${desc}&location=${loc}&full_time=${fullTime}`
+    const result = await axios.get(
+      `/api/positions?search=${desc}&location=${loc}&full_time=${fullTime}`
     );
+    console.log(result);
     setJobs(result.data);
   };
 

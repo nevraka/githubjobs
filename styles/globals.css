@@ -1,3 +1,21 @@
+@import '~antd/dist/antd.css';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 #root {
   height: 100vh;
   background: #f0f2f5;
@@ -7,7 +25,7 @@
   background-color: #1d80be;
   float: left;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   color: white;
   line-height: 2.5;
   border-top: 4px solid #1d5c8f;
@@ -15,9 +33,10 @@
 }
 .header-brand {
   font-weight: bold !important;
-  font-size: 20px !important;
+  font-size: 15px !important;
   color: white !important;
   line-height: 2.5 !important;
+  padding-top: 10px !important;
 }
 .header-button {
   color: white !important;
@@ -46,6 +65,7 @@
 }
 .search-div {
   display: flex;
+  margin-left: 30px;
 }
 .searchbox-div {
   display: grid !important;
@@ -172,6 +192,7 @@
   padding-left: 60px;
   min-height: 310px;
   width: 928px;
+  align-self: center;
 }
 .all-support-page {
   height: 100%;
