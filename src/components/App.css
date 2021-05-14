@@ -95,6 +95,7 @@
 .content {
   background-color: white;
   font-size: 12px;
+  padding-bottom: 82px !important;
 }
 .description {
   display: flex;
