@@ -1,6 +1,5 @@
 import React from 'react';
 import { Space } from 'antd';
-import '../src/components/App';
 import Link from 'next/link';
 
 const HowItWorks = () => {
@@ -12,7 +11,7 @@ const HowItWorks = () => {
       <img src="howitworks.png" alt="" className="image"></img>
       <div style={{ textAlign: 'center', padding: '55px', fontWeight: 'bold' }}>
         Questions? Submit a request via our{' '}
-        <Link href="/github_support">contact form</Link> and let's talk.
+        <Link href="/support">contact form</Link> and let's talk.
       </div>
     </>
   );
