@@ -23,7 +23,7 @@ const AppHeader = ({ onSearch }) => {
             All jobs
           </Link>
           <Divider type="vertical" className="divider" />
-          <Link href="/" className="header-button">
+          <Link href="/post" className="header-button">
             Post a job
           </Link>
           <Divider type="vertical" className="divider" />

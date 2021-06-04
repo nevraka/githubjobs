@@ -25,7 +25,7 @@ const Result = ({ jobs, title }) => {
                         </Link>
                         <div className="company-type">
                           <Link
-                            href={`/companies/${job.company}`}
+                            href={`/company/${job.company}`}
                             passHref
                             style={{ color: '#999' }}
                           >
