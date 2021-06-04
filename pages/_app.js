@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import AppHeader from '../src/components/AppHeader';
+import AppFooter from '../src/components/AppFooter';
 import { Layout } from 'antd';
 
 function MyApp({ Component, pageProps }) {
@@ -7,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <AppHeader onSearch={null} />
       <Component {...pageProps} />
+      <AppFooter />
     </Layout>
   );
 }
