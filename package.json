@@ -1,24 +1,32 @@
 {
-  "name": "next-githubb-jobs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@ant-design/icons": "^4.6.2",
-    "antd": "^4.15.5",
-    "axios": "^0.21.1",
-    "github-fork-ribbon-css": "^0.2.3",
-    "moment": "^2.29.1",
-    "next": "10.2.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-mde": "^11.5.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
-    "react-showdown": "^2.3.0"
-  }
+    "name": "next-githubb-jobs",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@ant-design/icons": "^4.6.2",
+        "antd": "^4.15.5",
+        "axios": "^0.21.1",
+        "github-fork-ribbon-css": "^0.2.3",
+        "moment": "^2.29.1",
+        "next": "10.2.0",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-mde": "^11.5.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.3",
+        "react-showdown": "^2.3.0",
+        "react-test-renderer": "^17.0.2"
+    },
+    "devDependencies": {
+        "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+        "enzyme": "^3.11.0",
+        "jest": "^27.0.4",
+        "jest-enzyme": "^7.1.2"
+    }
 }
