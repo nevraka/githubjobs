@@ -10,21 +10,22 @@ const MainPage = () => {
     const [jobs, setJobs] = useState([]);
     const [fullTime, setFullTime] = useState(false);
     const [title, setTitle] = useState('Featured Jobs');
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const loadFeatured = async () => {
             const result = await axios.get(`/api/positions?search=github`);
-            console.log(result);
             setJobs(result.data.slice(0, 3));
         };
         loadFeatured();
     }, []);
 
     const onSearch = async () => {
+        setLoading(true);
         const result = await axios.get(
             `/api/positions?search=${desc}&location=${loc}&full_time=${fullTime}`
         );
-        console.log(result);
+        setLoading(false);
         setJobs(result.data);
         setTitle('Search Results');
     };
@@ -42,7 +43,7 @@ const MainPage = () => {
                 jobs={jobs}
                 setJobs={setJobs}
             />
-            <Result jobs={jobs} title={title} />
+            {loading ? 'Loading...' : <Result jobs={jobs} title={title} />}
             <a
                 class="github-fork-ribbon right-bottom fixed"
                 href="https://github.com/nevraka/githubjobs"
