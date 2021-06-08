@@ -8,8 +8,10 @@ it('Github writing', () => {
     const result = span.text();
 
     expect(result).toBe('© 2020 GitHub Inc. All rights reserved.');
+});
 
-    const link = wrapper.find('Link');
-    const linkUrl = link.prop('href');
-    expect(linkUrl).toBe('/support');
+it('Test links', () => {
+    const wrapper = shallow(<AppFooter />);
+    const url = wrapper.find('Link').first().prop('href');
+    expect(url).toBe('/support');
 });
