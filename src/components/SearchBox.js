@@ -2,7 +2,15 @@ import React from 'react';
 import { Input } from 'antd';
 import { Button, Checkbox, Row, Col } from 'antd';
 
-const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
+const SearchBox = ({
+    onSearch,
+    desc,
+    setDesc,
+    loc,
+    setLoc,
+    setFullTime,
+    isFullTime,
+}) => {
     const handleDescChange = (event) => {
         setDesc(event.target.value);
     };
@@ -42,6 +50,7 @@ const SearchBox = ({ onSearch, desc, setDesc, loc, setLoc, setFullTime }) => {
             <Col xs={16} sm={12} md={3} className="checkbox">
                 <Checkbox
                     style={{ fontSize: '11px' }}
+                    checked={isFullTime}
                     onChange={(event) => {
                         setFullTime(event.target.checked);
                     }}
