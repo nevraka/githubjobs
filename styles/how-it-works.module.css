@@ -1,0 +1,22 @@
+.first {
+  border-style: groove;
+  padding: 0.8em;
+  margin: 16px;
+  border: 2px solid #ddd;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-left: 59px;
+  margin-right: 36px !important;
+}
+
+.question {
+  text-align: center;
+  padding: 30px;
+  font-weight: bold;
+}
+
+.contactlink {
+  text-decoration: underline !important;
+  color: #1d80be !important;
+}

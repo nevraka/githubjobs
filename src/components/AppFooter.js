@@ -14,6 +14,7 @@ const AppFooter = () => {
         position: 'fixed',
         bottom: '0',
         width: '100%',
+        height: '80px',
         background: '#f5f5f5',
         borderTop: '1px solid #ddd',
       }}

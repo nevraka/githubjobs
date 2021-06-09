@@ -7,7 +7,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <AppHeader onSearch={null} />
-      <Component {...pageProps} />
+      <div style={{ paddingBottom: '80px', width: '100%' }}>
+        <Component {...pageProps} />
+      </div>
       <AppFooter />
     </Layout>
   );

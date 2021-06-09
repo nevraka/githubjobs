@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
 }
 
 a {
@@ -172,22 +173,10 @@ a {
   color: #294455;
   border-bottom: 1px solid #ddd;
 }
-.first {
-  border-style: groove;
-  padding: 0.8em;
-  margin: 16px;
-  border: 2px solid #ddd;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
-  margin-left: 59px;
-  margin-right: 36px !important;
-}
 
 .image {
   width: 100%;
-  margin-top: -9px;
-  margin-left: -4px;
+  margin: 0 auto;
   padding: 10px 28px 15px 4px;
   padding-left: 60px;
   min-height: 310px;

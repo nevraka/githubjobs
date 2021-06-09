@@ -1,19 +1,27 @@
 import React from 'react';
 import { Space } from 'antd';
 import Link from 'next/link';
+import styles from '../styles/how-it-works.module.css';
 
 const HowItWorks = () => {
   return (
-    <>
-      <Space direction="vertical">
-        <div className="first">'https://jobs.github.com/post'</div>
-      </Space>
-      <img src="howitworks.png" alt="" className="image"></img>
-      <div style={{ textAlign: 'center', padding: '55px', fontWeight: 'bold' }}>
-        Questions? Submit a request via our{' '}
-        <Link href="/contact">contact form</Link> and let's talk.
+    <div style={{ textAlign: 'center' }}>
+      <div>
+        <Space direction="vertical">
+          <div className={styles.first}>'https://jobs.github.com/post'</div>
+        </Space>
       </div>
-    </>
+      <div>
+        <img src="howitworks.png" alt="" className="image" />
+      </div>
+      <div className={styles.question}>
+        Questions? Submit a request via our&nbsp;
+        <Link href="/contact">
+          <a className={styles.contactlink}>contact form</a>
+        </Link>
+        &nbsp;and let's talk.
+      </div>
+    </div>
   );
 };
 
