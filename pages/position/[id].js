@@ -32,7 +32,8 @@ const JobDetails = () => {
           </span>
         </Link>
         <div className="type-company">
-          <div>{job.type}</div> &nbsp; / &nbsp;<div>{job.location}</div>
+          <div>{job.type}</div> &nbsp; / &nbsp;
+          <div>{job.location}</div>
         </div>
         <div className="title">{job.title}</div>
       </div>
@@ -46,7 +47,9 @@ const JobDetails = () => {
             <Divider />
             <div
               style={{ wordBreak: 'break-all', fontSize: '11px' }}
-              dangerouslySetInnerHTML={{ __html: job.how_to_apply }}
+              dangerouslySetInnerHTML={{
+                __html: job.how_to_apply,
+              }}
             />
           </Card>
           <Card className="side-logo" style={{ fontWeight: 'bold' }}>
