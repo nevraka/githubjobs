@@ -6,7 +6,7 @@ describe('result component', () => {
         const expectedTitle = 'test title';
 
         const component = shallow(<Result title={expectedTitle} />);
-        const title = component.find('span').first().text();
+        const title = component.find('span').at(0).text();
 
         expect(title).toBe(expectedTitle);
     });
