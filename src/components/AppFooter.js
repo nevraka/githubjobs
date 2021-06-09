@@ -22,7 +22,7 @@ const AppFooter = () => {
         <Button type="link" className="footer-button">
           The GitHub Blog
         </Button>
-        <Link href="/support">
+        <Link href="/contact">
           <Button type="link" className="footer-button">
             Contact
           </Button>
