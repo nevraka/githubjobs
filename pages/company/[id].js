@@ -21,7 +21,6 @@ const CompanySearch = () => {
 
   return (
     <>
-      <SearchBox />
       <Result jobs={jobs} title={`Showing ${jobs.length} Jobs at ${id}`} />
     </>
   );
