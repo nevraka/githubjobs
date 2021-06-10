@@ -6,7 +6,7 @@ import { Layout } from 'antd';
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <AppHeader onSearch={null} />
+      <AppHeader />
       <div style={{ paddingBottom: '80px', width: '100%' }}>
         <Component {...pageProps} />
       </div>
