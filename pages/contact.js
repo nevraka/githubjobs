@@ -153,12 +153,8 @@ const SupportPage = () => {
               </Modal>
             </li>
           </ul>
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
         </div>
+
         <div
           style={{
             fontWeight: '600',
